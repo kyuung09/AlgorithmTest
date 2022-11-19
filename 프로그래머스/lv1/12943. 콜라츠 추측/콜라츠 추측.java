@@ -1,14 +1,26 @@
 class Solution {
     public int solution(int num) {
-        int answer = 0;
-        
-        while (num != 1) {
-            num = num % 2 == 0 ? num / 2 : num * 3 + 1;
-            
-            ++answer;
-            if (answer >= 480) return -1;
+        long n = num;
+        int cnt = 0;
+
+        while ( true ) {
+            if ( n == 1 ) break;
+            // n == 1 일경우 중단
+
+            if ( n % 2 == 0){
+                n /= 2;
+                cnt++;
+            }else {
+                n = (n * 3) + 1;
+                cnt++;
+            }
         }
-        
-        return answer;
+
+        if(cnt <= 500){
+            return cnt;
+        }else {
+            cnt = -1;
+            return cnt;
+        }
     }
 }
