@@ -1,20 +1,21 @@
 import java.util.Arrays;
 import java.util.Collections;
 
-
 class Solution {
     public String solution(String s) {
-              if(s.length() == 1){
-            return s;
-        }
+        String[] splitWord = s.split("");
+        // 정렬을 위해서 한글자씩 자름
+        Arrays.sort(splitWord, Collections.reverseOrder());
 
-        String[] arr = s.split("");
-        Arrays.sort(arr);
-        String str = "";
-        for(int i=arr.length-1; i>=0; i--){
-            str += arr[i];
-        }
-        return str;
+        // Arrays.sort로 정렬시 대문자가 소문자보다 큰걸로 판별
+        // 반대로 뒤집기 ( 소문자 > 대문자 )
 
+        String answer = "";
+
+        for (int i = 0; i < splitWord.length; i++) {
+            answer += splitWord[i];
+            System.out.println(answer);
+        }
+        return answer;
     }
 }
