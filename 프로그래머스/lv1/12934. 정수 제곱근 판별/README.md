@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 79.6 MB, 시간: 0.06 ms
+메모리: 86.1 MB, 시간: 0.03 ms
 
 ### 구분
 
@@ -28,8 +28,8 @@ n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양�
 <h5>입출력 예</h5>
 <table class="table">
         <thead><tr>
-<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">N</font></font></th>
-<th style="text-align: center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">반품</font></font></th>
+<th>n</th>
+<th style="text-align: center">return</th>
 </tr>
 </thead>
         <tbody><tr>
