@@ -13,5 +13,5 @@ def solution(progresses, speeds):
                 count = 0                               # count를 다시 0으로 초기화
             for i in range(len(progresses)):            # progresses의 배열의 크기만큼 반복
                 progresses[i] += speeds[i]              # 모든 배열의 값을 한번씩 돌면서 speed만큼 증가시킴
-    answer.append(count)
+    answer.append(count)                                # 마지막 배열의 값을 처리한 후 cnt 저장
     return answer
