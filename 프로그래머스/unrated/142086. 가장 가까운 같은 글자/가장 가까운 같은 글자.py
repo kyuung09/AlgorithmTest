@@ -1,12 +1,12 @@
 def solution(s):
-    checker = {}
     answer = []
+    s_dict = dict()
     
-    for idx, c in enumerate(s):
-        if c in checker:
-            answer.append(idx - checker[c])
-            checker[c] = idx
-        else:
+    for i in range(len(s)):
+        if s[i] not in s_dict:
             answer.append(-1)
-            checker[c] = idx
+        else:
+            answer.append(i-s_dict[s[i]])
+        s_dict[s[i]] = i
+        
     return answer
