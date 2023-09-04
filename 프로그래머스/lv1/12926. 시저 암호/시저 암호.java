@@ -1,18 +1,29 @@
 class Solution {
-    public String solution(String s, int n) {
-        String answer = "";
-        
-            for(int i=0; i<s.length(); i++){
-            char ch = s.charAt(i);
+    public static String solution(String s, int n) {
 
-            if(Character.isLowerCase(ch)){ //소문자
-                ch = (char)((ch-'a'+n)%26+ 'a');
-            }
-            else if(Character.isUpperCase(ch)){ //대문자
-                ch = (char)((ch-'A'+n)%26+ 'A');
-            }
-            answer += ch;
+        char[] chr = s.toCharArray();
+        StringBuilder builder = new StringBuilder();
+
+        for (char c : chr){
+            builder.append(pushAlphabat(c, n));
         }
-        return answer;
+        return builder.toString();
+    }
+
+    private static char pushAlphabat(char c, int n) {
+
+        if (!(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z')) {
+            return c;
+        }
+
+        int offset = Character.isUpperCase(c) ? 'A' : 'a';
+        int position = c - offset;
+
+        position = (position + n) % ('Z' - 'A' + 1);
+
+        c = (char) (position + offset);
+
+        return c;
+
     }
 }
