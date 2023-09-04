@@ -1,17 +1,16 @@
 class Solution {
     public int[] solution(long n) {
-        String nStr = ""+n;
+    
+        String str = Long.toString(n);
+        String reversed = new StringBuilder(str).reverse().toString();
+        char[] chr = reversed.toCharArray();
 
-        StringBuffer tp = new StringBuffer(nStr);
-        String reverse = tp.reverse().toString();
+        int[] answer = new int[chr.length];
 
-        char[] rChar = reverse.toCharArray();  // char 배열로 변환
-        int[] answer = new int[rChar.length];
-
-        // char를 int로 바꿔서 다시 출력함 Character의 getNumericValue(char ch) 이용
-        int i=0; // 인덱스용
-        for(char c : rChar){
-            answer[i++] = Character.getNumericValue(c);
-        } return answer;
+        for (int i = 0 ; i < answer.length; i++){
+            answer[i] = chr[i] - '0';
+        }
+        
+        return answer;
     }
 }
