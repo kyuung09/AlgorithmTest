@@ -1,14 +1,27 @@
 class Solution {
-  public String solution(String s) {
-
+    public String solution(String s) {
         String answer = "";
-        int cnt = 0;
-        String[] array = s.split("");
+    
+        char[] chars = s.toCharArray();
 
-        for(String ss : array) {
-            cnt = ss.contains(" ") ? 0 : cnt + 1;
-            answer += cnt%2 == 0 ? ss.toLowerCase() : ss.toUpperCase(); 
+        int cnt = 0;
+
+        for (char c : chars) {
+            if (c == 32) {
+                cnt = 0;
+                answer += c;
+                continue;
+            }
+
+            if (cnt == 0 || cnt % 2 == 0) {
+                answer += Character.toUpperCase(c);
+            } else {
+                answer += Character.toLowerCase(c);
+            }
+
+            cnt++;
         }
-      return answer;
-  }
+
+        return answer;
+    }
 }
